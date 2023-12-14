@@ -1,0 +1,10 @@
+formatter: markdown
+
+output:
+  file: README.md
+
+sort:
+  by: required
+
+recursive:
+  enabled: true
