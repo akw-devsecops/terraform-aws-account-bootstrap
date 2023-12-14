@@ -27,9 +27,8 @@ No resources.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_account_environment"></a> [account\_environment](#input\_account\_environment) | n/a | `string` | n/a | yes |
-| <a name="input_devsecops_ci_role_name"></a> [devsecops\_ci\_role\_name](#input\_devsecops\_ci\_role\_name) | n/a | `string` | n/a | yes |
+| <a name="input_ci_role_arn"></a> [ci\_role\_arn](#input\_ci\_role\_arn) | n/a | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | n/a | `string` | n/a | yes |
-| <a name="input_devsecops_platform_account_number"></a> [devsecops\_platform\_account\_number](#input\_devsecops\_platform\_account\_number) | n/a | `string` | `"335922408564"` | no |
 
 ## Outputs
 
