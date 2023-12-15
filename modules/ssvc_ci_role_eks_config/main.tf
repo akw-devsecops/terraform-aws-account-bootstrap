@@ -1,6 +1,8 @@
 data "aws_caller_identity" "current" {}
 
 module "this" {
+  count = var.enable_eks_ci_role ? 1 : 0 
+
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
   version = "~> 5.0"
 
@@ -11,7 +13,7 @@ module "this" {
 
   trusted_role_arns = ["arn:aws:iam::335922408564:role/ci-devsecops"]
   custom_role_policy_arns = [
-    aws_iam_policy.this.arn,
+    aws_iam_policy.this[0].arn,
   ]
 }
 
@@ -48,6 +50,8 @@ data "aws_iam_policy_document" "this" {
 }
 
 resource "aws_iam_policy" "this" {
+  count = var.enable_eks_ci_role ? 1 : 0
+
   name        = "ssvc_ci_role_eks_config"
   description = "Policy used by Terraform to manage s3"
   policy      = data.aws_iam_policy_document.this.json

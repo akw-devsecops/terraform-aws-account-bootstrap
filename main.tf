@@ -17,4 +17,5 @@ module "ssvc_ci_role_eks_config" {
   source = "./modules/ssvc_ci_role_eks_config"
 
   state_bucket_arn = module.state_bucket.s3_bucket_arn
+  enable_eks_ci_role = var.enable_eks_ci_role
 }
