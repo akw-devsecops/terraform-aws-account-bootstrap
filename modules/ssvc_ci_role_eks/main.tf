@@ -1,3 +1,5 @@
+data "aws_caller_identity" "current" {}
+
 module "ssvc_ci_role_eks" {
   count = (var.enable_eks_ci_role ? 0 : 1)
   
