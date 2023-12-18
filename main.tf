@@ -16,6 +16,14 @@ module "state_bucket" {
 module "ssvc_ci_role_eks_config" {
   source = "./modules/ssvc_ci_role_eks_config"
 
-  state_bucket_arn = module.state_bucket.s3_bucket_arn
+  state_bucket_arn          = module.state_bucket.s3_bucket_arn
+  enable_eks_ci_config_role = var.enable_eks_ci_config_role
+}
+
+module "ssvc_ci_role_eks" {
+  source = "./modules/ssvc_ci_role_eks"
+
+  vpc_id             = var.vpc_id
   enable_eks_ci_role = var.enable_eks_ci_role
+  ci_role_arn        = var.ci_role_arn
 }

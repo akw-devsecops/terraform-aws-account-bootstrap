@@ -28,7 +28,7 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_state_bucket_arn"></a> [state\_bucket\_arn](#input\_state\_bucket\_arn) | n/a | `string` | n/a | yes |
-| <a name="input_enable_eks_ci_role"></a> [enable\_eks\_ci\_role](#input\_enable\_eks\_ci\_role) | n/a | `bool` | `false` | no |
+| <a name="input_enable_eks_ci_config_role"></a> [enable\_eks\_ci\_config\_role](#input\_enable\_eks\_ci\_config\_role) | n/a | `bool` | `true` | no |
 
 ## Outputs
 
