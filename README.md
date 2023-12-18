@@ -1,5 +1,5 @@
 # terraform-aws-account-bootstrap
-Terraform Module to bootstrap AWS accounts
+Terraform Module to bootstrap AWS accounts.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
