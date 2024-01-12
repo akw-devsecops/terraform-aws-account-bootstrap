@@ -3,7 +3,7 @@
 module "ci_role" {
   source              = "./modules/ci_role"
   account_environment = var.account_environment
-  trusted_ci_role_arn = var.ci_role_arn
+  trusted_ci_role_arn = var.trusted_ci_role_arn
 }
 
 module "state_bucket" {
@@ -25,5 +25,5 @@ module "ssvc_ci_role_eks" {
 
   vpc_id             = var.vpc_id
   enable_eks_ci_role = var.enable_eks_ci_role
-  ci_role_arn        = var.ci_role_arn
+  trusted_ci_role_arn        = var.trusted_ci_role_arn
 }

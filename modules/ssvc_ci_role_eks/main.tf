@@ -1,7 +1,7 @@
 data "aws_caller_identity" "current" {}
 
 module "ssvc_ci_role_eks" {
-  count = (var.enable_eks_ci_role ? 0 : 1)
+  count = (var.enable_eks_ci_role ? 1 : 0)
   
   source = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
 
@@ -18,7 +18,7 @@ module "ssvc_ci_role_eks" {
 }
 
 resource "aws_iam_policy" "ssvc_cluster_ci_role_terraform" {
-  count = (var.enable_eks_ci_role ? 0 : 1)
+  count = (var.enable_eks_ci_role ? 1 : 0)
 
   name   = "ssvc_cluster_ci_role_terraform"
   policy = data.aws_iam_policy_document.ssvc_cluster_ci_role_terraform.json
@@ -146,7 +146,7 @@ data "aws_iam_policy_document" "ssvc_cluster_ci_role_terraform" {
 }
 
 resource "aws_iam_policy" "ssvc_cluster_ci_role_terraform_read" {
-  count = (var.enable_eks_ci_role ? 0 : 1)
+  count = (var.enable_eks_ci_role ? 1 : 0)
   
   name   = "ssvc_cluster_ci_role_terraform_read"
   policy = data.aws_iam_policy_document.ssvc_cluster_ci_role_terraform_read.json

@@ -1,7 +1,3 @@
-variable "ci_role_arn" {
-  type = string
-}
-
 variable "vpc_id" {
   type = string
 }
@@ -9,4 +5,8 @@ variable "vpc_id" {
 variable "enable_eks_ci_role" {
   type = bool
   default = false
+}
+
+variable "trusted_ci_role_arn" {
+  type = string
 }
