@@ -6,7 +6,3 @@ variable "enable_eks_ci_role" {
   type = bool
   default = false
 }
-
-variable "trusted_ci_role_arn" {
-  type = string
-}

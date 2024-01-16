@@ -25,5 +25,5 @@ module "ssvc_ci_role_eks" {
 
   vpc_id             = var.vpc_id
   enable_eks_ci_role = var.enable_eks_ci_role
-  trusted_ci_role_arn        = var.trusted_ci_role_arn
+  
 }
