@@ -143,6 +143,18 @@ data "aws_iam_policy_document" "ssvc_cluster_ci_role_terraform" {
       "*"
     ]
   }
+
+  statement {
+    effect    = "Allow"
+    actions   = ["s3:ListBucket"]
+    resources = [var.state_bucket_arn]
+  }
+
+  statement {
+    effect    = "Allow"
+    actions   = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
+    resources = ["${var.state_bucket_arn}/*"]
+  }
 }
 
 resource "aws_iam_policy" "ssvc_cluster_ci_role_terraform_read" {
