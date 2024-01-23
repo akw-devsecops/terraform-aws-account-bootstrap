@@ -11,7 +11,7 @@ module "this" {
   role_name         = "ssvc_ci_role_eks_config"
   role_requires_mfa = false
 
-  trusted_role_arns = ["arn:aws:iam::335922408564:role/ci-devsecops"]
+  trusted_role_arns = ["arn:aws:iam::335922408564:role/ci-devsecops", "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/SAML-AKW-ADMIN"]
   custom_role_policy_arns = [
     aws_iam_policy.this[0].arn,
   ]
