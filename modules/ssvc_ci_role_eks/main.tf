@@ -123,6 +123,17 @@ data "aws_iam_policy_document" "ssvc_cluster_ci_role_terraform" {
   }
 
   statement {
+    sid = "Autoscaling"
+    effect = "Allow"
+    actions = [
+      "autoscaling:*",
+    ]
+    resources = [
+      "*" // TODO add boundaries
+    ]
+  }
+
+  statement {
     sid    = "EKS"
     effect = "Allow"
     actions = [
