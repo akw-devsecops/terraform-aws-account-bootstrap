@@ -94,6 +94,7 @@ data "aws_iam_policy_document" "ssvc_cluster_ci_role_terraform" {
       "iam:DeletePolicy",
       "iam:DeleteRole",
       "iam:DeleteRolePolicy",
+      "iam:DeletePolicyVersion",
       "iam:DetachRolePolicy",
       "iam:GetOpenIDConnectProvider",
       "iam:GetPolicy",
