@@ -1,7 +1,7 @@
 data "aws_caller_identity" "current" {}
 
 module "this" {
-  count = var.enable_eks_ci_config_role ? 1 : 0 
+  count = var.enable_eks_ci_config_role ? 1 : 0
 
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
   version = "~> 5.0"
