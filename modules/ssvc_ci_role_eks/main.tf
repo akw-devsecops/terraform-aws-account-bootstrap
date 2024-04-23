@@ -182,6 +182,7 @@ data "aws_iam_policy_document" "ssvc_cluster_ci_role_terraform_read" {
     effect = "Allow"
     actions = [
       "ec2:DescribeAddresses",
+      "ec2:DescribeAddressesAttribute",
       "ec2:DescribeLaunchTemplates",
       "ec2:DescribeLaunchTemplateVersions",
       "ec2:DescribeNetworkInterfaces",
