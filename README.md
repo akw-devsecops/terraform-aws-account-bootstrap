@@ -33,6 +33,7 @@ No resources.
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | n/a | `string` | n/a | yes |
 | <a name="input_enable_eks_ci_config_role"></a> [enable\_eks\_ci\_config\_role](#input\_enable\_eks\_ci\_config\_role) | n/a | `bool` | `true` | no |
 | <a name="input_enable_eks_ci_role"></a> [enable\_eks\_ci\_role](#input\_enable\_eks\_ci\_role) | n/a | `bool` | `true` | no |
+| <a name="input_trusted_ci_role_arns"></a> [trusted\_ci\_role\_arns](#input\_trusted\_ci\_role\_arns) | n/a | `set(string)` | `[]` | no |
 
 ## Outputs
 

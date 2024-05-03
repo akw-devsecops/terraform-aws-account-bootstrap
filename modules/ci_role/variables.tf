@@ -5,3 +5,8 @@ variable "account_environment" {
 variable "trusted_ci_role_arn" {
   type = string
 }
+
+variable "trusted_ci_role_arns" {
+  type    = set(string)
+  default = []
+}

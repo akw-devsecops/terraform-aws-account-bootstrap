@@ -29,6 +29,7 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | <a name="input_account_environment"></a> [account\_environment](#input\_account\_environment) | n/a | `string` | n/a | yes |
 | <a name="input_trusted_ci_role_arn"></a> [trusted\_ci\_role\_arn](#input\_trusted\_ci\_role\_arn) | n/a | `string` | n/a | yes |
+| <a name="input_trusted_ci_role_arns"></a> [trusted\_ci\_role\_arns](#input\_trusted\_ci\_role\_arns) | n/a | `set(string)` | `[]` | no |
 
 ## Outputs
 

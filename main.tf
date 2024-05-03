@@ -1,9 +1,10 @@
 ### Modules
 
 module "ci_role" {
-  source              = "./modules/ci_role"
-  account_environment = var.account_environment
-  trusted_ci_role_arn = var.trusted_ci_role_arn
+  source               = "./modules/ci_role"
+  account_environment  = var.account_environment
+  trusted_ci_role_arn  = var.trusted_ci_role_arn
+  trusted_ci_role_arns = var.trusted_ci_role_arns
 }
 
 module "state_bucket" {
