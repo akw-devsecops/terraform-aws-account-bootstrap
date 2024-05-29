@@ -51,6 +51,14 @@ data "aws_iam_policy_document" "this" {
     ]
     resources = ["*"]
   }
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "ecr:*",
+    ]
+    resources = ["*"]
+  }
 }
 
 resource "aws_iam_policy" "this" {
