@@ -2,7 +2,7 @@ data "aws_caller_identity" "current" {}
 
 module "ssvc_ci_role_eks" {
   count = (var.enable_eks_ci_role ? 1 : 0)
-  
+
   source = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
 
   create_role = true
@@ -81,6 +81,23 @@ data "aws_iam_policy_document" "ssvc_cluster_ci_role_terraform" {
   }
 
   statement {
+    sid    = "IAMPassRole"
+    effect = "Allow"
+    actions = [
+      "iam:PassRole"
+    ]
+    resources = [
+      "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS",
+      "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup"
+    ]
+    condition {
+      test     = "StringEquals"
+      variable = "iam:PassedToService"
+      values   = ["eks.amazonaws.com"]
+    }
+  }
+
+  statement {
     sid    = "IAM"
     effect = "Allow"
     actions = [
@@ -109,7 +126,6 @@ data "aws_iam_policy_document" "ssvc_cluster_ci_role_terraform" {
       "iam:ListRolePolicies",
       "iam:ListRoleTags",
       "iam:ListRoles",
-      "iam:PassRole",
       "iam:PutRolePolicy",
       "iam:TagOpenIDConnectProvider",
       "iam:TagPolicy",
@@ -171,7 +187,7 @@ data "aws_iam_policy_document" "ssvc_cluster_ci_role_terraform" {
 
 resource "aws_iam_policy" "ssvc_cluster_ci_role_terraform_read" {
   count = (var.enable_eks_ci_role ? 1 : 0)
-  
+
   name   = "ssvc_cluster_ci_role_terraform_read"
   policy = data.aws_iam_policy_document.ssvc_cluster_ci_role_terraform_read.json
 }
