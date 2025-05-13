@@ -1,6 +1,6 @@
 module "tf_state_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "~> 3.0"
+  version = "~> 4.0"
 
   bucket = "${var.project_name}-state-${var.account_environment}"
 
