@@ -13,7 +13,7 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ssvc_ci_role_eks"></a> [ssvc\_ci\_role\_eks](#module\_ssvc\_ci\_role\_eks) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | n/a |
+| <a name="module_ssvc_ci_role_eks"></a> [ssvc\_ci\_role\_eks](#module\_ssvc\_ci\_role\_eks) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | 5.55.0 |
 
 ## Resources
 

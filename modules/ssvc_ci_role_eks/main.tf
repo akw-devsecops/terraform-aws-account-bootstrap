@@ -3,14 +3,15 @@ data "aws_caller_identity" "current" {}
 module "ssvc_ci_role_eks" {
   count = (var.enable_eks_ci_role ? 1 : 0)
 
-  source = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
+  source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
+  version = "5.55.0"
 
   create_role = true
 
   role_name         = "ssvc_ci_role_eks"
   role_requires_mfa = false
 
-  trusted_role_arns = [ "arn:aws:iam::335922408564:role/ci-devsecops", "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/SAML-AKW-ADMIN"]
+  trusted_role_arns = ["arn:aws:iam::335922408564:role/ci-devsecops", "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/SAML-AKW-ADMIN"]
   custom_role_policy_arns = [
     aws_iam_policy.ssvc_cluster_ci_role_terraform[0].arn,
     aws_iam_policy.ssvc_cluster_ci_role_terraform_read[0].arn
@@ -139,7 +140,7 @@ data "aws_iam_policy_document" "ssvc_cluster_ci_role_terraform" {
   }
 
   statement {
-    sid = "Autoscaling"
+    sid    = "Autoscaling"
     effect = "Allow"
     actions = [
       "autoscaling:*",
