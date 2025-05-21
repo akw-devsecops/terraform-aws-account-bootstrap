@@ -17,7 +17,7 @@ module "github_actions_role" {
 
   policies = {
     ApplicationRoleManagement = aws_iam_policy.application_role_management.arn
-    StateBucketAccess         = var.state_bucket_arn
+    StateBucketAccess         = aws_iam_policy.state_bucket_access.arn
   }
 }
 
