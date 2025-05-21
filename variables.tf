@@ -11,12 +11,12 @@ variable "vpc_id" {
 }
 
 variable "enable_eks_ci_role" {
-  type = bool
+  type    = bool
   default = true
 }
 
 variable "enable_eks_ci_config_role" {
-  type = bool
+  type    = bool
   default = true
 }
 
@@ -27,4 +27,9 @@ variable "trusted_ci_role_arn" {
 variable "trusted_ci_role_arns" {
   type    = set(string)
   default = []
+}
+
+variable "github_organization" {
+  type        = string
+  description = "GitHub organization name for OIDC provider"
 }
