@@ -4,7 +4,7 @@ module "this" {
   count = var.enable_eks_ci_config_role ? 1 : 0
 
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version = "~> 5.0"
+  version = "5.55.0"
 
   create_role = true
 

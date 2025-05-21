@@ -13,7 +13,7 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_this"></a> [this](#module\_this) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | ~> 5.0 |
+| <a name="module_this"></a> [this](#module\_this) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | 5.55.0 |
 
 ## Resources
 

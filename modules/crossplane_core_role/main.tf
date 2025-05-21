@@ -5,7 +5,8 @@
 module "crossplane_core_iam_role" {
   count = var.env == "prod" ? 1 : 0
 
-  source = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
+  source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
+  version = "5.55.0"
 
   create_role = true
 
@@ -13,8 +14,8 @@ module "crossplane_core_iam_role" {
   role_requires_mfa = false
 
   create_custom_role_trust_policy = true
-  custom_role_trust_policy = data.aws_iam_policy_document.order_adapter_trust_policy.json
-  
+  custom_role_trust_policy        = data.aws_iam_policy_document.order_adapter_trust_policy.json
+
   custom_role_policy_arns = [
     aws_iam_policy.order_adapter.arn
   ]

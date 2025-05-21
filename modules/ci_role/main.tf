@@ -1,7 +1,8 @@
 data "aws_caller_identity" "current" {}
 
 module "ssvc_ci_role" {
-  source = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
+  source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
+  version = "5.55.0"
 
   create_role = true
 

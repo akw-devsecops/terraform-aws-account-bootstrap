@@ -13,7 +13,7 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_crossplane_core_iam_role"></a> [crossplane\_core\_iam\_role](#module\_crossplane\_core\_iam\_role) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | n/a |
+| <a name="module_crossplane_core_iam_role"></a> [crossplane\_core\_iam\_role](#module\_crossplane\_core\_iam\_role) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | 5.55.0 |
 
 ## Resources
 
