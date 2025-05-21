@@ -43,10 +43,6 @@ data "aws_iam_policy_document" "this" {
   statement {
     effect = "Allow"
     actions = [
-      "ecr:GetRepositoryPolicy",
-      "ecr:GetLifecyclePolicy",
-      "ecr:DescribeRepositories",
-      "ecr:ListTagsForResource",
       "eks:DescribeCluster",
     ]
     resources = ["*"]
