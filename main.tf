@@ -1,5 +1,3 @@
-### Modules
-
 module "ci_role" {
   source               = "./modules/ci_role"
   account_environment  = var.account_environment
@@ -11,7 +9,6 @@ module "state_bucket" {
   source              = "./modules/state_bucket"
   account_environment = var.account_environment
   project_name        = var.project_name
-
 }
 
 module "ssvc_ci_role_eks_config" {
@@ -27,4 +24,11 @@ module "ssvc_ci_role_eks" {
   vpc_id             = var.vpc_id
   enable_eks_ci_role = var.enable_eks_ci_role
   state_bucket_arn   = module.state_bucket.s3_bucket_arn
+}
+
+module "github_actions_role" {
+  source = "./modules/github_actions_role"
+
+  github_organization = var.github_organization
+  state_bucket_arn    = module.state_bucket.s3_bucket_arn
 }
