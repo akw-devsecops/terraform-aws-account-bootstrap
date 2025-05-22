@@ -33,3 +33,8 @@ variable "github_organization" {
   type        = string
   description = "GitHub organization name for OIDC provider"
 }
+
+variable "github_repository" {
+  type        = string
+  description = "GitHub repository name for OIDC provider"
+}

@@ -30,5 +30,5 @@ module "github_actions_role" {
   source = "./modules/github_actions_role"
 
   github_organization = var.github_organization
-  state_bucket_arn    = module.state_bucket.s3_bucket_arn
+  github_repository   = var.github_repository
 }
