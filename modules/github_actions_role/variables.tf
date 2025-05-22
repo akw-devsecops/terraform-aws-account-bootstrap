@@ -3,7 +3,7 @@ variable "github_organization" {
   type        = string
 }
 
-variable "state_bucket_arn" {
-  description = "ARN of the state bucket"
+variable "github_repository" {
+  description = "GitHub repository name for OIDC provider"
   type        = string
 }
