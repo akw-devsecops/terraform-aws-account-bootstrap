@@ -30,6 +30,7 @@ No resources.
 |------|-------------|------|---------|:--------:|
 | <a name="input_account_environment"></a> [account\_environment](#input\_account\_environment) | n/a | `string` | n/a | yes |
 | <a name="input_github_organization"></a> [github\_organization](#input\_github\_organization) | GitHub organization name for OIDC provider | `string` | n/a | yes |
+| <a name="input_github_repository"></a> [github\_repository](#input\_github\_repository) | GitHub repository name for OIDC provider | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | n/a | `string` | n/a | yes |
 | <a name="input_trusted_ci_role_arn"></a> [trusted\_ci\_role\_arn](#input\_trusted\_ci\_role\_arn) | n/a | `string` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | n/a | `string` | n/a | yes |
